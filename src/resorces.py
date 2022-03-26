@@ -30,6 +30,8 @@ class Question:
         else:
             print("Incorrect...")
 
+
+
 class Quiz:
     def __init__(self, name, questions):
         self.name = name
@@ -48,8 +50,16 @@ class Quiz:
         for question in self.questions:
             question.ask_question()
     
-    def load_questions():
-        quiz = []
-        with open ("question.txt", "r", encoding="utf8") as f:
-            for line in f.readlines():
-                
+def load_questions():
+    quiz = []
+    with open ("questions.txt", "r", encoding="utf8") as f:
+        for line in f.readlines():
+            Line = line.split("/")
+        qu = Question(Line[0],
+                     Line[1],
+                     (Line[2],
+                     Line[3],
+                     Line[4]))
+
+        quiz.append(qu)
+    return quiz

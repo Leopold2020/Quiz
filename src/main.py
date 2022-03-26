@@ -1,11 +1,14 @@
-from resorces import Quiz, Question
+from resorces import Quiz, Question, load_questions
 
 
 def main():
-    q1 = Question("Vilken färg är himlen?", "blå", ["blå", "röd", "grön", "gul"])
-    q2 = Question("Hur många tjejer går i INF20?", "2", ["2", "3", "10", "5"])
-    oskar_quiz = Quiz("Random NTI Facts" , [q1, q2])
+    # q1 = Question("Vilken färg är himlen?", "blå", ["blå", "röd", "grön", "gul"])
+    # q2 = Question("Hur många tjejer går i INF20?", "2", ["2", "3", "10", "5"])
+    # oskar_quiz = Quiz("Random NTI Facts" , [q1, q2])
 
+    q = Question(load_questions)
+
+    oskar_quiz = Quiz("Random NTI Facts" , [q])
 
     oskar_quiz.start_quiz()
 
